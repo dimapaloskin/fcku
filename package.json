@@ -1,0 +1,17 @@
+{
+  "name": "fcku",
+  "version": "0.0.1",
+  "description": "Validator",
+  "main": "src/index.js",
+  "author": "Dima Pavlovsky",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "kind-of": "^6.0.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.0.3",
+    "snazzy": "^7.0.0",
+    "standard": "^10.0.3"
+  }
+}

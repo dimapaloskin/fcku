@@ -1,0 +1,4 @@
+ - or
+ - custom errors everywhere
+ - walker
+ - super simple
