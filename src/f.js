@@ -6,8 +6,11 @@ const { or } = require('./presets')
 
 const isFcku = fn => fn[FCKU] === true
 
-const f = (...args) => {
-  const step = function (val) {
+const f = (...original) => {
+  // const args = original.map(x => x)
+
+  const step = function (val, next) {
+    const args = next || original.map(x => x)
     const assert = args.shift()
 
     if (!assert) {
@@ -17,7 +20,7 @@ const f = (...args) => {
     // skip error
     // f(..., ..., error('Error'), ...)
     if (isFckuErrorCreator(assert)) {
-      return step(val)
+      return step(val, args)
     }
 
     // Execute assert
@@ -30,7 +33,7 @@ const f = (...args) => {
         throw error
       }
 
-      return step(val)
+      return step(val, args)
     }
 
     if (kindOf(assert) === 'object') {

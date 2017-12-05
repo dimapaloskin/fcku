@@ -5,6 +5,8 @@ const createAssert = (test, defaultError) => {
   // TUTU: async/await in feature?
 
   const assert = function (val) {
+    // TODO: add required checking
+    if (!val) return val
     try {
       const isValid = test(val)
 

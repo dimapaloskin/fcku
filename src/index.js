@@ -32,14 +32,15 @@ const main = () => {
           number
         )
       },
-      arr: array(or(validMail, string))
+      arr: array(validMail)
     })
 
     const s = Schema({
       title: 'test',
       count: {
-        num: 'asasd@gmail.com'
-      }
+        num: 1
+      },
+      arr: ['asd@gmail.com', 2]
     })
 
     console.log(s)

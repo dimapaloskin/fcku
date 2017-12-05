@@ -26,7 +26,20 @@ const or = (...args) => {
 
 const array = (assert) => {
   return createAssert(val => {
-  })
+    if (kindOf(val) !== 'array') {
+      return false
+    }
+
+    if (assert) {
+      try {
+        val.forEach(v => assert(v))
+      } catch (err) {
+        throw err
+      }
+    }
+
+    return val
+  }, val => `${val} is not array`)
 }
 
 // const optional =
